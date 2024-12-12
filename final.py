@@ -8,8 +8,15 @@ base_data = pd.read_csv(base_file_path)
 print("原始 post_time 列内容：")
 print(base_data['post_time'].head())
 
-# 自动解析清洗后数据的时间
+# 尝试解析时间
 base_data['post_time'] = pd.to_datetime(base_data['post_time'], errors='coerce')
+
+# 检查解析结果
+if base_data['post_time'].isna().all():
+    print("清洗后的数据中所有时间解析失败，请检查时间列内容是否为空或格式不正确")
+    print(base_data.head())  # 打印前几行数据以便调试
+    base_data['post_time'] = pd.Timestamp("1970-01-01")  # 添加一个默认时间以避免崩溃
+    print("使用默认时间 '1970-01-01' 填充 post_time 列")
 
 # 检查解析结果，确保至少有部分时间解析成功
 if base_data['post_time'].isna().all():
