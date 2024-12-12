@@ -52,7 +52,10 @@ Anti Scam HKGolden
 4. requirements.txt
    - 功能 / Functionality:
      - 列出项目所需的 Python 包，方便用户快速安装依赖。
-
+5.baseline_clean.py
+   -功能 / Functionality:
+      - 可以对初次收集的数据进行清洗
+      - 作为自动化部分清洗的备份
 ---
 
 输出文件 / Output Files
