@@ -11,14 +11,14 @@ Anti Scam HKGolden
 
 使用说明 / Usage Instructions
 
-1. 克隆项目 / Clone the Repository
+1. 克隆项目 / Clone the Repository/
    git clone https://github.com/llksis/anti_scam_hkgolden.git
    cd anti_scam_hkgolden
 
-2. 安装依赖 / Install Dependencies
+2. 安装依赖 / Install Dependencies/
    pip install -r requirements.txt
 
-3. 运行主程序 / Run the Main Script
+3. 运行主程序 / Run the Main Script/
    python main.py
 
 ---
