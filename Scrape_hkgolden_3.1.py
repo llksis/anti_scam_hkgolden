@@ -55,8 +55,8 @@ for keyword in keywords:
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, 'jss126'))  # 替换为实际页面结构
     )
-    print(keyword+":")
-    print("页面加载成功", end="/")
+    #print(keyword+":")
+    #print("页面加载成功", end="/")
 
 
     # 实现网页滚动到底，便于后续爬取全部内容
@@ -71,7 +71,7 @@ for keyword in keywords:
             new_height = driver.execute_script("return document.body.scrollHeight") # 获取当前页面的高度
             # 如果滚动后页面高度没有变化，则认为所有内容已加载
             if new_height == last_height:
-                print("已加载到页面底部 无更多内容", end="/")
+                #print("已加载到页面底部 无更多内容", end="/")
                 break  # 退出循环
             last_height = new_height # 更新页面高度
 
@@ -244,11 +244,19 @@ posts_data = {
 
 # 打印带有表格线的格式的表格，生成csv文件
 from IPython.display import display
-from datetime import datetime
+import pandas as pd
 import shutil
+
+# 将数据整合为 DataFrame
 datatoday = pd.DataFrame.from_dict(posts_data)
-display(datatoday)
-time_stamp = datetime.now().strftime("%Y-%m-%d_%H%M")
-file_name = f'{time_stamp}.csv'
-datatoday.to_csv(file_name, encoding='utf-8-sig', index=False)
-shutil.copy(file_name, 'newest_data.csv')
+
+# 保存为 newest_data.csv
+datatoday.to_csv('newest_data.csv', encoding='utf-8-sig', index=False)
+print("数据已保存至 newest_data.csv")
+
+# 带时间戳的备份（可选启用）
+# from datetime import datetime
+# time_stamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+# file_name = f'{time_stamp}.csv'
+# datatoday.to_csv(file_name, encoding='utf-8-sig', index=False)
+# shutil.copy(file_name, 'newest_data.csv')
