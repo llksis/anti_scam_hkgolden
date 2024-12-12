@@ -12,7 +12,7 @@ Anti Scam HKGolden
 使用说明 / Usage Instructions
 
 1. 克隆项目 / Clone the Repository
-   git clone https://github.com/your-username/anti_scam_hkgolden.git
+   git clone https://github.com/llksis/anti_scam_hkgolden.git
    cd anti_scam_hkgolden
 
 2. 安装依赖 / Install Dependencies
