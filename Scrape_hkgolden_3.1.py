@@ -26,7 +26,7 @@ chrome_options.add_argument("--no-sandbox") # 禁用沙箱
 
 
 
-keywords = ["Scam",  "騙", "Cheating", "Fraud", "電詐",  "呃"]
+keywords = ["Scam",  "騙", "Cheating", "Fraud", "詐",  "呃"]
 #keywords = ["Scam", "Cheating", "Fraud", "欺騙", "行騙", "詐騙", "詐欺", "電騙", "騙"]
 
 # 构造空的列表，用于存放发帖人，发帖人id，发布时间，标题，类别，评论数，点赞量，点踩量，帖子的链接
